@@ -1,7 +1,11 @@
 import React from 'react';
-import {Card, Col} from 'react-bootstrap';
+import {Card, Col, Button} from 'react-bootstrap';
 
 const User = (props) => {
+    const handleDelete = (e) => {
+        e.preventDefault();
+        console.log("Item Deleted!")
+    }
     return (
         <Col md="4" style={{marginBottom: "1rem"}} >
             <Card>
@@ -22,7 +26,9 @@ const User = (props) => {
                         </p>
                     </Card.Text>
                     <Card.Link href="#">Edit</Card.Link>
-                    <Card.Link href="#">Delete</Card.Link>
+                    <Card.Link href="#">
+                        <Button variant="danger" size="sm" onClick={handleDelete} >Delete</Button>
+                    </Card.Link>
                 </Card.Body>
             </Card>
         </Col>
